@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Órdenes | Nova Tech</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="panel">
+
+<h1>Órdenes de Reparación</h1>
+
+<div class="form-box">
+
+<select id="equipoOrden"></select>
+
+<input id="problemaOrden" placeholder="Problema reportado">
+<input id="diagnosticoOrden" placeholder="Diagnóstico">
+<input id="costoOrden" type="number" placeholder="Costo estimado">
+
+<button onclick="crearOrden()">Crear Orden</button>
+<button class="volver" onclick="location.href='dashboard.html'">Volver</button>
+
+</div>
+
+<h2>Lista de Órdenes</h2>
+<div id="listaOrdenes" class="grid"></div>
+<p id="vacioOrden" class="vacio">No hay órdenes registradas</p>
+
+</div>
+
+<script src="js/ordenes.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Clientes | Nova Tech</title>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="panel">
+
+<h1>Gestión de Clientes</h1>
+
+<div class="form-box">
+<input id="nombre" placeholder="Nombre">
+<input id="telefono" placeholder="Teléfono">
+<input id="email" placeholder="Email">
+<input id="direccion" placeholder="Dirección">
+
+<button onclick="agregarCliente()">Guardar</button>
+<button class="volver" onclick="location.href='dashboard.html'">Volver</button>
+</div>
+
+<input class="buscador" id="buscar" placeholder="Buscar cliente..." onkeyup="buscarCliente()">
+
+<h2>Lista de Clientes</h2>
+
+<table>
+<thead>
+<tr>
+<th>Nombre</th>
+<th>Teléfono</th>
+<th>Email</th>
+<th>Dirección</th>
+<th>Acciones</th>
+</tr>
+</thead>
+
+<tbody id="listaClientes"></tbody>
+</table>
+
+<p id="vacio" class="vacio">No hay clientes registrados</p>
+
+</div>
+
+<script src="js/clientes.js"></script>
+</body>
+</html>
