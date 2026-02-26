@@ -2,6 +2,10 @@ if(localStorage.getItem("logueado")!=="true"){
  location.href="index.html";
 }
 
+if(localStorage.getItem("logueado")!=="true"){
+ location.href="index.html";
+}
+
 let equipos = JSON.parse(localStorage.getItem("equipos")) || [];
 let clientes = JSON.parse(localStorage.getItem("clientes")) || [];
 let ordenes = JSON.parse(localStorage.getItem("ordenes")) || [];

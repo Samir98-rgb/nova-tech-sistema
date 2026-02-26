@@ -356,3 +356,115 @@ td button{
 .acciones button{
  margin:2px;
 }
+
+/* ESTILOS COMUNES */
+.panel-precios{
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border-radius:20px;
+  padding:25px;
+  width:500px;
+  box-shadow:0 0 25px rgba(0,255,255,0.15);
+}
+
+.panel-precios h2{
+  text-align:center;
+  margin-bottom:15px;
+  color:#8be9fd;
+}
+
+.tabla-precios{
+  width:100%;
+  border-collapse:collapse;
+  font-size:14px;
+}
+
+.tabla-precios th{
+  background:rgba(0,255,255,0.15);
+  padding:10px;
+  border-radius:10px;
+}
+
+.tabla-precios td{
+  padding:10px;
+  text-align:center;
+}
+
+.tabla-precios tr{
+  transition:0.2s;
+}
+
+.tabla-precios tr:hover{
+  background:rgba(255,255,255,0.05);
+  transform:scale(1.01);
+}
+
+.btn{
+  border:none;
+  padding:6px 10px;
+  border-radius:8px;
+  cursor:pointer;
+  font-size:13px;
+  margin:2px;
+}
+
+.editar{
+  background:#00e5ff;
+  color:black;
+}
+
+.eliminar{
+  background:#ff4d4d;
+  color:white;
+}
+
+.topbar{
+ position:absolute;
+ top:20px;
+ right:30px;
+}
+
+.topbar button{
+ background:#ef4444;
+ border:none;
+ padding:10px 15px;
+ border-radius:10px;
+ color:white;
+ cursor:pointer;
+ font-weight:bold;
+}
+
+.panel-crear{
+ background:#020617;
+ padding:20px;
+ border-radius:15px;
+ margin-top:15px;
+ box-shadow:0 0 20px rgba(0,0,0,.6);
+ display:flex;
+ flex-direction:column;
+ gap:10px;
+ width:250px;
+}
+
+.panel-admin{
+ background:#020617;
+ padding:20px;
+ border-radius:18px;
+ margin-top:20px;
+ box-shadow:0 0 25px rgba(0,0,0,.7);
+ width:350px;
+ display:flex;
+ flex-direction:column;
+ gap:15px;
+}
+
+.usuario-card{
+ background:#0f172a;
+ padding:12px;
+ border-radius:12px;
+ margin-bottom:10px;
+}
+
+.usuario-card button{
+ margin-right:5px;
+}

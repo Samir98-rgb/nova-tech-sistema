@@ -13,12 +13,64 @@
 <h2>Panel de Control Técnico</h2>
 
 <div class="menu">
+  <button onclick="abrirAdmin()">Panel Admin</button>
+<div id="adminPanel" class="panel-admin" style="display:none;">
+
+<h2>Panel Administrador</h2>
+
+<div class="crear-user">
+<input id="adminUser" placeholder="Usuario">
+<input id="adminPass" placeholder="Contraseña">
+
+<select id="adminRol">
+<option value="tecnico">Técnico</option>
+<option value="admin">Admin</option>
+</select>
+
+<button onclick="crearUsuarioAdmin()">Crear</button>
+<button onclick="logout()">Cerrar Sesión</button>
+<button onclick="crearUsuarioAdmin()">Crear</button>
+
+</div>
+
+<hr>
+
+<div id="listaUsuarios"></div>
+
+<button onclick="cerrarAdmin()">Cerrar</button>
+
+</div>
+
+<button onclick="mostrarCrearUsuario()">Crear Usuario</button>
+<div id="adminPanel" class="panel-crear" style="display:none;">
+
+<h3>Nuevo Usuario</h3>
+
+<input id="nuevoUser" placeholder="Usuario">
+<input id="nuevoPass" placeholder="Contraseña">
+
+<select id="nuevoRol">
+<option value="tecnico">Técnico</option>
+<option value="admin">Admin</option>
+</select>
+
+<button onclick="crearUsuario()">Guardar</button>
+<button onclick="cerrarPanel()">Cancelar</button>
+
+</div>
+
+
 <button onclick="location.href='clientes.html'">Clientes</button>
 <button onclick="location.href='equipos.html'">Equipos</button>
 <button onclick="location.href='ordenes.html'">Órdenes</button>
 <button onclick="location.href='stock.html'">Stock</button>
 <button onclick="location.href='servicios.html'">Servicios</button>
-<button onclick="location.href='index.html'">Cerrar Sesión</button>
+
+
+<div class="topbar">
+<button onclick="logout()">Cerrar sesión</button>
+</div>
+
 </div>
 
 </div>

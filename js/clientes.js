@@ -1,3 +1,7 @@
+if(localStorage.getItem("logueado")!=="true"){
+ location.href="index.html";
+}
+
 let clientes = JSON.parse(localStorage.getItem("clientes")) || [];
 
 function guardar(){

@@ -30,8 +30,30 @@
 
 <input id="buscarServicio" placeholder="Buscar servicio..." onkeyup="mostrarServicios()">
 
-<h2>Lista de precios</h2>
-<div id="listaServicios"></div>
+<select id="filtroEquipo" onchange="filtrarServicios()">
+<option value="Todos">Todos</option>
+<option value="PC">PC</option>
+<option value="Notebook">Notebook</option>
+<option value="Netbook">Netbook</option>
+</select>
+
+
+  <h2>Lista de precios</h2>
+
+  <table class="tabla-precios">
+    <thead>
+      <tr>
+
+      </tr>
+    </thead>
+
+    <tbody id="listaServicios">
+      <!-- Se cargan con JS -->
+    </tbody>
+  </table>
+
+</div>
+
 <p id="vacioServicios" class="vacio">No hay servicios cargados</p>
 
 </div>

@@ -4,6 +4,60 @@ if(localStorage.getItem("logueado")!=="true"){
 
 let servicios = JSON.parse(localStorage.getItem("servicios")) || [];
 
+function renderServicios(filtro="Todos"){
+  const lista = document.getElementById("listaServicios");
+  lista.innerHTML = "";
+
+  let filtrados = servicios;
+
+  if(!localStorage.getItem("usuarios")){
+ localStorage.setItem("usuarios", JSON.stringify([
+  {user:"admin", pass:"1234", rol:"admin"},
+  {user:"tecnico", pass:"1234", rol:"tecnico"}
+ ]));
+}
+
+
+  if(filtro !== "Todos"){
+    filtrados = servicios.filter(s => s.tipo === filtro);
+  }
+
+  filtrados.forEach((s,i)=>{
+    lista.innerHTML += `
+      <tr>
+        <td>${s.nombre}</td>
+        <td>${s.tipo}</td>
+        <td>$${s.precio}</td>
+        <td>
+          <button class="btn editar" onclick="editar(${i})">Editar</button>
+          <button class="btn eliminar" onclick="eliminar(${i})">X</button>
+        </td>
+      </tr>
+    `;
+  });
+}
+
+function filtrarServicios(){
+  const tipo = document.getElementById("filtroEquipo").value;
+  renderServicios(tipo);
+}
+
+
+function guardarServicio(nombre,tipo,precio){
+  servicios.push({nombre,tipo,precio});
+  localStorage.setItem("servicios",JSON.stringify(servicios));
+  renderServicios();
+}
+
+function eliminar(i){
+  servicios.splice(i,1);
+  localStorage.setItem("servicios",JSON.stringify(servicios));
+  renderServicios();
+}
+
+renderServicios();
+
+
 function guardarDB(){
  localStorage.setItem("servicios", JSON.stringify(servicios));
 }
@@ -111,3 +165,4 @@ function limpiar(){
 }
 
 mostrarServicios();
+renderServicios();

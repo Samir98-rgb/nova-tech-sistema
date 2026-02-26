@@ -1,12 +1,27 @@
-function hacerLogin(){
+if(!localStorage.getItem("usuarios")){
+    localStorage.setItem("usuarios", JSON.stringify([
+        {user:"admin", pass:"admin", rol:"admin"}
+    ]));
+}
+function login(){
 
- let u = document.getElementById("user").value;
- let p = document.getElementById("pass").value;
+ let user = document.getElementById("user").value.trim().toLowerCase();
+ let pass = document.getElementById("pass").value.trim();
 
- if(u==="admin" && p==="novatech"){
-  localStorage.setItem("logueado","true");
-  window.location.href="dashboard.html";
- }else{
-  document.getElementById("error").innerText="Usuario o contraseña incorrectos";
+ let usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+ let encontrado = usuarios.find(u =>
+  u.user.toLowerCase() === user && u.pass === pass
+ );
+
+ if(!encontrado){
+  document.getElementById("error").textContent="Datos incorrectos";
+  return;
  }
+
+ localStorage.setItem("logueado","true");
+ localStorage.setItem("rol", encontrado.rol);
+ localStorage.setItem("usuario", encontrado.user);
+
+ location.href="dashboard.html";
 }
